@@ -1,6 +1,7 @@
-
 01.00.introduction.md
+
 02.00.Before-You-Begin.md
+
 03.00.building-the-server-machine.md
 03.01.generating-ssh-keys.md
 03.02.create-a-digitalocean-droplet.md
@@ -11,7 +12,9 @@
 03.08.test-express-server.md
 03.09.using-pm2.md
 03.10.using-nginx-as-a-reverse-proxy-server.md
+
 04.00.development-machine-setup.md
+
 05.00.mongodb.md
 05.01.creating-a-mongodb-database.md
 05.02.wrapping-calls-to-mongodb.md
@@ -20,7 +23,9 @@
 05.05.first-test-find.md
 05.06.test-for-findbyid.md
 05.07.the-remaining-rests.md
+
 06.00.build-out-server.md
 06.01.minimum-configuration.md
 06.02.first-deployment.md
+
 13.00.express-server-configuration.md
