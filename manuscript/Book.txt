@@ -1,6 +1,10 @@
-01.00.introduction.md
+00.00.introduction.md
 
-02.00.Before-You-Begin.md
+01.00.setup.md
+01.01.get-a-domain.md
+01.01.development-machine-setup.md
+
+02.00.minimal-express-server
 
 03.00.building-the-server-machine.md
 03.01.generating-ssh-keys.md
@@ -13,7 +17,7 @@
 03.09.using-pm2.md
 03.10.using-nginx-as-a-reverse-proxy-server.md
 
-04.00.development-machine-setup.md
+
 
 05.00.mongodb.md
 05.01.creating-a-mongodb-database.md
@@ -28,4 +32,9 @@
 06.01.minimum-configuration.md
 06.02.first-deployment.md
 
-13.00.express-server-configuration.md
+07.00.react-client.md
+07.01.redux.md
+
+
+55.00.express-server-configuration.md
+55.00.cors
