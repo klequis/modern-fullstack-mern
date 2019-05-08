@@ -1,0 +1,41 @@
+> Per my testing, for a Node server, you do not need to have var/www/klequis-todo.tk/html setup for a Node/Express server.
+
+# Create Domain
+- api.klequis-todo.tk
+- add @ record
+- add www record
+
+
+```js
+sudo nano /etc/nginx/sites-available/api.klequis-todo.tk
+```
+> TODO: Contents of file
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/api.klequis-todo.tk/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name api.klequis-todo.tk www.api.klequis-todo.tk;
+
+        location / {
+                proxy_pass http://localhost:3030;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
+
+```
+
+Link it
+```js
+sudo ln -s /etc/nginx/sites-available/api.klequis-todo.tk /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
