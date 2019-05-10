@@ -1,12 +1,15 @@
 
 00.00.introduction.md
 
+**Setup**
 01.00.setup.md
 01.01.get-a-domain.md
 01.01.development-machine-setup.md
 
+**Express Server Part I- Minimal Server**
 02.00.minimal-express-server
 
+**Server machine Part I**
 03.00.building-the-server-machine.md
 03.01.generating-ssh-keys.md
 03.02.create-a-digitalocean-droplet.md
@@ -14,11 +17,14 @@
 03.04.installing-nginx.md
 03.06.secure-nginx-with-lets-encrypt.md
 03.07.installing-node.md
+
+**Express Server Part II - Deployment**
 03.08.deploy-minimal-express-app.md
+
+**Server machine Part II**
 03.09.using-pm2.md
 03.10.using-nginx-as-a-reverse-proxy-server.md
 
-**Comment here**
 
 05.00.mongodb.md
 05.01.creating-a-mongodb-database.md

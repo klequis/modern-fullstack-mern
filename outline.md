@@ -1,38 +1,41 @@
-Introduction
+# 00.00.00 Introduction
 
-Setup
-- Get a domain
-- Development machine setup
-- Build minimal Express server
+# 01.00.00 Setup
+## 01.01.00 Dev machine setup
+### 01.01.01 Global vs Local Package Installs
+### 01.01.02 nodemon
+### 01.01.03 NodeJS & npm
+### 01.01.04 MongoDB Local Install
+### 01.01.05 MongoDB Compass
+### 01.01.06 VS Code
+  -  Extensions
+  -  Settings
+     - Update Imports On File Move
+     - Window Title
 
-- Minimal Express Server
+# Express Server I - Minimal Implementation
 
-- Build server machine
-  - Generating SSH Keys
-  - Create a DigitalOcean Droplet
-  - DNS Setup on AWS Route53
-  - Installing Nginx
-  - Installing Nginx with Let's Encrypt
-  - Installing Node
-  - ?Deploy Minimal Server
-  - Using PM2
-  - Nginx as a Reverse Proxy
-  - CORS :(
+# Build Ubuntu Server Part I
 
-- React Client
-  - React
-  - Redux
-  - ...
+# Deploy Express Server
+## Make a build script
+## Deployment
+## Testing
+
+# Build Ubuntu Server Part II
+
+# React Client I - Minimal Client
+
+# MongoDB
+## Creating a MongoDB Database
+## Wrapping Calls to MongoDB
+## Writing Tests
+### Test Environment Configuration
+### Testing findBy()
+### Testing findById()
+### The Remaining Tests
 
 
-- MongoDB
-  - Wrapping Calls to MongoDB
-  - Writing Tests
-    - Test Environment Configuration
-    - First Test find()
-		- Testing findById()
-    - The Remaining Tests
+# Express Server II - Full Implementation
 
-- ExpressJS
-
-- Deployment
+# Client II - Full Implementation
