@@ -1,0 +1,32 @@
+{
+  "name": "modern-fullstack-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "to-pdf.js",
+  "scripts": {
+    "start": "npx babel-node to-pdf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klequis/modern-fullstack-mern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klequis/modern-fullstack-mern/issues"
+  },
+  "homepage": "https://github.com/klequis/modern-fullstack-mern#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "fs-extra": "^8.0.1",
+    "markdown-pdf": "^9.0.0",
+    "pdf-merge": "^1.2.0",
+    "rimraf": "^2.6.3"
+  }
+}
