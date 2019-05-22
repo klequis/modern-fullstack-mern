@@ -1,40 +1,34 @@
 const markdownpdf = require('markdown-pdf')
 const path = require('path')
-const PDFMerge = require('pdf-merge')
 const fse = require('fs-extra')
 
 const srcDir = '../manuscript'
 const outDir = 'out'
 
-const main = () => {
-  
-    fse.pathExists(outDir)
-    .then(() => {
-      fse.remove(outDir).then(() => {
-        fse.ensureDir(outDir)
-      }).then(() => {
-        return fse.readdir(srcDir)
-      }).then((srcDirFiles) => {
-        console.log('source directory file count = ', srcDirFiles.length)
-        return srcDirFiles.filter(f => path.extname(f) === '.md')
-      }).then((mdFiles) => {
-        console.log('number of md files', mdFiles.length);
-        return mdFiles.map(file => {
+const filterAndAddPath = (files) => {
+  return new Promise((resolve, reject) => {
+    try {
+      const mdFiles = files
+        .filter(f => path.extname(f) === '.md')
+        .map(f => `${srcDir}/${f}`)
+      resolve(mdFiles)
+    }
+    catch (e) {
+      reject(e)
+    }
+  })
+}
 
-          const outFileName = `${path.basename(file, '.md')}.pdf`
-          fse.createReadStream(`${srcDir}/${file}`)
-            .pipe(markdownpdf())
-            .pipe(fse.createWriteStream(`${outDir}/${outFileName}`))
-          return `${outDir}/${outFileName}`
-        })
-      }).then(outFiles => {
-        console.log('number of pdf files created =', outFiles.length)
-        // PDFMerge(outFiles, { output: `${__dirname}/3.pdf`  })
-        setTimeout(() => {
-          PDFMerge(outFiles, { output: `${__dirname}/3.pdf` })
-        }, 1000)
-      })
+const main4 = async ()  => {
+  const allFiles = await fse.readdir(srcDir)
+  const mdFiles = await filterAndAddPath(allFiles)
+  const bookPath = 'book.pdf'
+  markdownpdf()
+    .concat.from(mdFiles)
+    .to(bookPath, function() {
+      console.log('Created', bookPath)
     })
 }
 
-main()
+main4()
+
