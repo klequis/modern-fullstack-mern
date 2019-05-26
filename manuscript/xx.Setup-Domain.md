@@ -1,4 +1,4 @@
-# Set Name Servers in Domain Host
+# ZZ Setup Domain
 
 Log into the registrar that manages you DNS and change the name servers to
 ns2.digitalocean.com
