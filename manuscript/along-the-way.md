@@ -10,3 +10,6 @@
 
 - [UFW Essentials: Common Firewall Rules and Commands](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
 
+
+
+- [How to Install and Configure MongoDB on Ubuntu 18.04 LTS](https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu)
