@@ -13,3 +13,8 @@
 
 
 - [How to Install and Configure MongoDB on Ubuntu 18.04 LTS](https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu)
+
+
+- React recommneded library for UI testing: [react-testing-library](https://github.com/testing-library/react-testing-library)
+
+
