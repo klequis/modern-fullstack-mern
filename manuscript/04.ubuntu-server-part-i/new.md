@@ -249,3 +249,10 @@ Test the renewal process
 sudo certbot renew --dry-run
 
 ```
+
+## Install NodeJS 12.x
+
+```js
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
