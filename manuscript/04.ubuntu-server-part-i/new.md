@@ -1,23 +1,23 @@
 NOTE TO ME: Had problem getting new page to show instead of default. Seems default responds to the ip address and the new page responds to api.klequis-todo.tk. Therefore, important to setup DNS as early as possible.
 
-
 # Initial Server Setup
 
 ## Ref
 
 - https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04
 
-login
+## login as root
 
 ```js
 ssh root@your_server_ip
 ```
 
-Add new user `doadmin`
+## Add new user `doadmin`
 
 ```js
 adduser doadmin
 ```
+Grant Administrative Privileges
 
 ```js
 usermod -aG sudo doadmin
@@ -47,7 +47,7 @@ Re-check status
 ufw status
 ```
 
-### Enable access for non-root user
+## Enable access for non-root user
 
 Stay logged in as root until you confirm the new non-root user has access. Doing so will allow you to troubleshoot any problems with the non-root user.
 
@@ -62,19 +62,26 @@ rsync --archive --chown=doadmin:doadmin ~/.ssh /home/doadmin
 
 Login as 'doadmin'.
 
+In new terminal window:
+
 ```js
 ssh doadmin@your_server_ip
 ```
 
 You should use 'doadmin' for all remaining tasks.
 
+# Setup Domain
 
-# Nginx
+TODO: Pasted from 06.02. Getting full process requires looking at AWS
+- api.klequis-todo.tk
+- add @ record
+- add www record
+
+
+# Installing Nginx
 
 ## Ref
 - https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
-
-## Installation
 
 ```js
 sudo apt update
@@ -100,7 +107,7 @@ sudo ufw status
 systemctl status nginx
 ```
 
-** Welcome to nginx
+View default page in browser
 
 You should now be able to use the servers ip address to see the default nginx page
 
@@ -200,25 +207,34 @@ Restart Nginx
 sudo systemctl restart nginx
 ```
 
-# Securing Nginx
+# Setup Domain
+__
+
+# Securing Nginx with Let's Encrypt
 
 ## Ref
 
 - https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 
-Add repository
+## Install Certbot
+
+Add repository (Install Certbot)
 
 ```js
 sudo add-apt-repository ppa:certbot/certbot
 ```
 
-Install Certbot
+Install
 
 ```js
 sudo apt install python-certbot-nginx
 ```
 
-Allow https
+## Confirm Configuration
+
+- this section inspects the serer block configuration
+
+## Allow HTTPS
 
 Add Nginx Full
 
@@ -232,7 +248,7 @@ Remove Ngnix HTTP
 sudo ufw delete allow 'Nginx HTTP'
 ```
 
-Obtain an SSL Certificate
+## Obtain an SSL Certificate (Get SSL Certificate)
 
 NOTE: in my origin article i did not include the second '-d' that has 'www'. Don't see a need for it.
 
@@ -243,16 +259,27 @@ sudo certbot --nginx -d api.klequis-todo.tk -d www.api.klequis-todo.tk
 Choices are presented. Choose #2 'Redirect'
 
 
-Test the renewal process
+## Test the Auto-renewal process
 
 ```js
 sudo certbot renew --dry-run
 
 ```
 
-## Install NodeJS 12.x
+# Install NodeJS 12.x
 
 ```js
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+
+Some npm packages need `build-essential` to compile code from source.
+
+```js
+sudo apt install build-essential
+```
+
+# Install Node/Express App
+
+# Setup Nginx as Reverse Proxy
+- TODO: Why not do this earlier?
