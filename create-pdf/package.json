@@ -26,6 +26,7 @@
     "@babel/runtime": "^7.4.4",
     "fs-extra": "^8.0.1",
     "markdown-pdf": "^9.0.0",
+    "node-dir": "^0.1.17",
     "pdf-merge": "^1.2.0",
     "rimraf": "^2.6.3"
   }
