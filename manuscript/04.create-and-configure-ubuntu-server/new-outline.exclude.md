@@ -25,9 +25,12 @@ _Create Node app Locally_
 
 # (05) DNS Setup on AWS Route53
 
-# (06) Install & Configure Nginx
+# (06) Deploy Minimal Express Application
+- do this
 
-## (06.01) Install Nginx
+# (07) Install & Configure Nginx
+
+## (07.01) Install Nginx
 
 - Adjust Firewall
   - Check Web  Server  
@@ -36,7 +39,11 @@ _Create Node app Locally_
 - Setup Server Block
   - TODO: go straight to node configuration?
 
-## (06.02) Secure Nginx with Let's Encrypt
+## (07.02) Setting-up Server Blocks on Nginx
+
+## (07.03) Using Nginx as a Reverse Proxy Server
+
+## (07.04) Secure Nginx with Let's Encrypt
 
 - Install Certbot
 - Confirm configuration
@@ -46,19 +53,17 @@ _Create Node app Locally_
 - Get SSL Certificate
 - Verify Auto-Renewal
 
-# (07) Deploy Minimal Express Application
-- do this
-
 # (08) Install & configure PM2
 > TODO: this step is missing from `new.md`
 
-# (09) Setup Nginx as Reverse Proxy
+# (09) Minimal React Client
 
-# (10) Minimal React Client
+# (10) MongoDB
 
-# (11) MongoDB
+# (11) Full Express Application
 
-# (12) Full Express Application
+# (12) Deploy the Full Express Application
+
 
 # (13) Full React Client
 
