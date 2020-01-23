@@ -8,20 +8,18 @@
 
 _Create Node app Locally_
 
-# (04) Create & Configure Ubuntu Server
+# (04) Initial Ubuntu Server Setup
 
 ## (04.01) Generate SSH Keys
 
 ## (04.02) Create a droplet
 
-## (04.03) Configure Ubuntu Server
-
-- Logging-in as root
-- Create non-root user
-- Grant non-root user Administrative Privileges
-- Setup Firewall
-- Enable external access for non-root user
-- Install NodeJS 12.x
+## (04.03) Logging-in as root
+## (04.04) Create non-root user
+## (04.05) Grant non-root user Administrative Privileges
+## (04.06) Setup Firewall
+## (04.07)- Enable external access for non-root user
+## (04.08)- Install NodeJS 12.x
 
 # (05) DNS Setup on AWS Route53
 
