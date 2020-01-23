@@ -1,6 +1,6 @@
-NOTE TO ME: Had problem getting new page to show instead of default. Seems default responds to the ip address and the new page responds to api.klequis-todo.tk. Therefore, important to setup DNS as early as possible.
-
 # Initial Server Setup
+
+NOTE TO ME: Had problem getting new page to show instead of default. Seems default responds to the ip address and the new page responds to api.klequis-todo.tk. Therefore, important to setup DNS as early as possible.
 
 ## Ref
 
@@ -83,134 +83,7 @@ TODO: Pasted from 06.02. Getting full process requires looking at AWS
 
 
 
-# Installing Nginx
 
-## Ref
-- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
-
-```js
-sudo apt update
-sudo apt install nginx
-
-```
-## Adjust the Firewall
-
-```js
-sudo ufw app list
-sudo ufw allow 'Nginx HTTP'
-```
-
-Verify
-
-```js
-sudo ufw status
-```
-
-## Check Web server
-
-```js
-systemctl status nginx
-```
-
-View default page in browser
-
-You should now be able to use the servers ip address to see the default nginx page
-
-```js
-http://your_server_ip
-```
-
-## Set-up Server Block
-
-Create directory for new site
-
-```js
-sudo mkdir -p /var/www/api.klequis-todo.tk/html
-```
-Assign ownership to 'doadmin'.
-
-```js
-sudo chown -R $USER:$USER /var/www/api.klequis-todo.tk/html
-```
-
-The sites folder should have 755 permission. If not ...
-
-```js
-sudo chmod -R 755 /var/www/api.klequis-todo.tk
-```
-
-Create a web page to display
-
-```
-nano /var/www/api.klequis-todo.tk/html/index.html
-```
-
-Make the contents of the page as follows:
-
-```html
-<html>
-    <head>
-        <title>Welcome to api.klequis-todo.tk!</title>
-    </head>
-    <body>
-        <h1>Success!  The api.klequis-todo.tk server block is working!</h1>
-    </body>
-</html>
-```
-
-Create the server block
-
-```js
-sudo nano /etc/nginx/sites-available/api.klequis-todo.tk
-```
-
-With the contents as
-
-```js
-server {
-        listen 80;
-        listen [::]:80;
-
-        root /var/www/api.klequis-todo.tk/html;
-        index index.html index.htm;
-
-        server_name api.klequis-todo.tk www.api.klequis-todo.tk;
-
-        location / {
-                try_files $uri $uri/ =404;
-        }
-}
-```
-
-Enable the server block.
-
-```js
-sudo ln -s /etc/nginx/sites-available/api.klequis-todo.tk /etc/nginx/sites-enabled/
-```
-
-Change the hash bucket size.
-
-```js
-sudo nano /etc/nginx/nginx.conf
-```
-
-Uncomment the line
-
-```js
-server_names_hash_bucket_size 64;
-```
-
-Check the configuration.
-
-```js
-sudo nginx -t
-```
-
-Restart Nginx
-
-```js
-sudo systemctl restart nginx
-```
 
 # Securing Nginx with Let's Encrypt
 
