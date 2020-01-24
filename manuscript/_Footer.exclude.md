@@ -1,1 +1,0 @@
-Carl Becker (klequis) https://carlbecker.com
