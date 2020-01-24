@@ -30,19 +30,13 @@ _Create Node app Locally_
 
 ## (07.01) Install Nginx
 
-- Adjust Firewall
-  - Check Web  Server  
-- Nginx Commands
+## (07.02) Adjust Firewall
+## (07.03) Check Web  Server  
+## (07.04) Nginx Commands
   - TODO: Find a link to reference
-- Setup Server Block
+## (07.05) Setup Server Block
   - TODO: go straight to node configuration?
-
-## (07.02) Setting-up Server Blocks on Nginx
-
-## (07.03) Using Nginx as a Reverse Proxy Server
-
-## (07.04) Secure Nginx with Let's Encrypt
-
+## (07.06) Secure Nginx with Let's Encrypt
 - Install Certbot
 - Confirm configuration
   - TODO: looks good idea but why do it now?
@@ -50,6 +44,9 @@ _Create Node app Locally_
   - TODO: seems to allow htts through as well
 - Get SSL Certificate
 - Verify Auto-Renewal
+## (07.07) Using Nginx as a Reverse Proxy Server
+
+
 
 # (08) Install & configure PM2
 > TODO: this step is missing from `new.md`

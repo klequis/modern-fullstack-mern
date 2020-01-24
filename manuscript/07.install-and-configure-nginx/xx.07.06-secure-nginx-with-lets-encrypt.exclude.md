@@ -32,9 +32,7 @@ Nginx Full (v6)            ALLOW       Anywhere (v6)
 
 > SNAPSHOT: 670dcc64-71c1-11e9-8056-d7554b508c91
 
-> TODO: above says HTTP was removed, but the status 'Nginx Full' seems to mean all/both. Read ufw doc to confirm.
 
-> old: TODO: This is currently allowing HTTP & HTTPS traffice in. Once working, try removing HTTP and allowing HTTPS only.
 
 Now get the certificate. This will make entries in the server block so that the certificate is used.
 ```js
